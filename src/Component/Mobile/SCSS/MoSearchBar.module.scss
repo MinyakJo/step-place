@@ -1,0 +1,57 @@
+
+#searchBox{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 60px;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0px 1px 1px rgba(141, 134, 134, 0.1);
+    @include font_type("Noto");
+
+    input{
+        display: flex;
+        margin-left: 6px;
+        margin-right: 12px;
+        padding: 8px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-right: 24px;
+        width: calc(100% - 24px);
+        font-weight: 350;
+        font-size: 16px;
+        line-height: 100%;
+        box-sizing: border-box;
+    }
+
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #inputBox{
+        display: flex;
+        flex-grow: 1;
+        position: relative;
+    }
+
+    #cancel{
+        position: absolute;
+        margin-right: 20px;
+        right: 0;
+        top: 4px;
+    }
+
+    #left{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        flex-grow: 1;
+    }
+    #right{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}

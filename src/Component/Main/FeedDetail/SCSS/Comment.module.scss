@@ -1,0 +1,463 @@
+
+@mixin comment(){
+
+    //댓글 전체
+    #commentBox{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 30px;
+
+        #hiddenBox{
+            display: none;
+        }
+        @media screen and (max-width: 500px) {
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 20px;
+            #hiddenBox{
+                display: flex;
+                position: absolute;
+                width: 100px;
+                button{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50px;
+                    height: 50px;
+                    background-color: $grey01-color;
+                }
+                #back{
+                    background-color: $grey03-color;
+                }
+            }
+        }
+
+        #line{
+            width: 100%;
+            height: 1px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        //댓글창위 아이콘들
+        #iconsBox{
+            display: flex;
+            width: 100%;
+            margin-top: 24px;
+            
+            p{
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 100%;
+            }
+
+            //댓글창 상단 아이콘
+            #leftIcon, #rightIcon{
+                display: flex;
+            }
+            
+            //댓글창 상단 좌측 아이콘
+            #leftIcon{
+                flex-grow: 1;
+                #iconBox{
+                    margin-right: 30px;
+                    #icon{
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            #iconBox{
+                display: flex;
+            }
+
+            @media screen and (max-width: 500px) {
+                p{
+                    padding-top: 3px;
+                    font-size: 14px;
+                }
+
+                #leftIcon{
+                    #iconBox{
+                        margin-right: 17px;
+                    }
+                }
+            }
+        }
+
+        //댓글 입력창
+        #commentInputBox{
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            position: relative;
+            flex-wrap: wrap;
+
+            //모바일용 프로필
+            #inputProfile{
+                display: none;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            //댓글 입력
+            #commentInput{
+                width: 100%;
+                padding: 20px;
+                height: 120px;
+                box-sizing: border-box;
+                border: 1px solid $grey02-color;
+                border-radius: 10px;
+                font-size: 16px;
+
+                &::-webkit-scrollbar{
+                    width: 10px;
+                }
+                &::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 0 10px transparent;
+                    border: solid 3px transparent;
+                    border-radius: 10px;
+                }
+                
+                &::-webkit-scrollbar-thumb {
+                    box-shadow: inset 0 0 0 10px $grey02-color;
+                    border: solid 3px transparent;
+                    border-radius: 10px;
+                }
+            }
+            //모바일 댓글
+            #commentInputMo{
+                display: none;
+                box-sizing: border-box;
+                border: 1px solid $grey02-color;
+                border-radius: 10px;
+                font-size: 14px;
+            }
+
+            //비밀댓글, 확인버튼
+            #uploadType{
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                //비밀댓글, 확인 공통
+                #upload, #uploadSecret{
+                    width: 50%;
+                    margin-top: 16px;
+                    button{
+                        display: flex;
+                    }
+                }
+
+                //비밀댓글
+                #uploadSecret{
+                    button{
+                        align-items: center;
+                        svg{
+                            margin-right: 4px;
+                        }
+                        p{
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 150%;
+                            padding: 4px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                //확인 버튼
+                #upload{
+                    display: flex;
+                    justify-content: flex-end;
+                    button{
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 100%;
+                        color: $main-color;
+                        padding: 4px;
+                    }
+                }
+            }
+        }
+
+        //댓글 전체
+        #commentDetailBox{
+            display: flex;
+            margin-top: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+
+            #commentDetail{
+                display: flex;
+                width: 100%;
+                margin-top: 16px;
+                flex-wrap: wrap;
+                position: relative;
+
+                @media screen and (max-width: 500px) {   
+                    margin-top: 23px;
+                }
+
+                p{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 150%;
+                }
+
+                #reCommentSvg{
+                    margin-top: 2px;
+                }
+
+                //댓글
+                #comment{
+                    display: flex;
+                    flex-grow: 1;
+                    flex-wrap: wrap;
+    
+                    //댓글 작성자 정보와 신고
+                    #writerInfo{
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
+    
+                        //작성자 정보
+                        #info{
+                            width: fit-content;
+                            display: flex;
+                            align-items: center;
+                            #profileImg{
+                                display: flex;
+                                width: 24px;
+                                height: 24px;
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: 100%;
+                                background-color: $grey01-color;
+                            }
+                            #nickname{
+                                margin-left: 4px;
+                                margin-right: 4px;
+                                max-width: 100px;
+                                overflow: hidden;          
+                                white-space: nowrap;                   
+                                text-overflow: ellipsis;
+                            }
+                            #badge{
+                                margin-right: 8px;
+                            }
+                            #date, #reComment{
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 150%;
+                                margin-right: 8px;
+                            }
+                            #date{
+                                display: flex;
+                                color: $grey02-color;
+                                @media screen and (max-width: 500px) {
+                                    flex-direction: row;
+                                    justify-content: flex-end;
+                                    flex-grow: 1;
+                                }
+                            }
+                            #reComment{
+                                color: $main-color;
+                                min-width: 52px;
+                                @media screen and (max-width: 500px) {
+                                    flex-direction: row;
+                                    justify-content: flex-end;
+                                    flex-grow: 0;
+                                }
+                            }
+                        }
+    
+                        //신고버튼
+                        #report{
+                            display: flex;
+                            align-items: center;
+                            margin-left: auto;
+                            #reportBtn{
+                                display: flex;
+                                align-items: center;
+                                p{
+                                    color: $grey-color;
+                                }
+                                svg{
+                                    margin-bottom: 2px;
+                                    margin-right: 4px;
+                                }
+                            }
+
+                            #deleteBtn{
+                                font-weight: 500;
+                                font-size: 14.4853px;
+                                line-height: 21px;
+                                color: $main-color;
+                                p{
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+    
+                    #commentContents{
+                        display: flex;
+                        align-items: flex-start;
+                        width: 100%;
+                        margin-top: 4px;
+                        p{
+                            width: 100%;
+                            align-items: flex-start;
+                            margin-left: 5px;
+                            display: flex;
+                            color: $grey-color;
+                            flex-wrap: wrap;
+                            white-space: pre-line;
+                            word-break: break-word;
+                        }
+                        svg{
+                            margin-top: 4px
+                        }
+                    }
+                }
+
+                #reComment{
+                    @extend #comment;
+                    max-width: calc(100% - 16px);
+                }
+
+                #reCommentInput{
+                    display: flex;
+                    width: 100%;
+                    margin-top: 16px;
+                    justify-content: center;
+                    align-items: center;
+                    input{
+                        width: calc(100% - 68px);
+                        font-weight: 400;
+                        font-size: 14px;
+                        padding: 8px;
+                        border: 1px solid $grey02-color;
+                        border-radius: 4px;
+                    }
+                    #btnBox{
+                        margin-left: 4px;
+                        min-width: 68px;
+                        button{
+                            margin-left: 4px;
+                            margin-right: 4px;
+                            font-weight: 400;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 800px) {
+            #commentDetailBox{
+                #commentDetail{
+                    #comment{
+                        #writerInfo{
+                            #info{
+                                width: 80%;
+                            }
+                            #report{
+                                width: fit-content;
+                                min-width: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 630px) {
+            #commentDetailBox{
+                #commentDetail{
+                    #comment{
+                        #writerInfo{
+                            #info{
+                                width: 90%;
+                            }
+                            #report{
+                                min-width: 30px;
+                                justify-content: flex-end;
+                                #reportBtn{
+                                    p{
+                                        display: none;
+                                    }
+                                    svg{
+                                        margin-right: 0;
+                                    }
+                                }
+                                 #deleteBtn{
+                                    font-size: 14px;
+                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 580px) {
+            #commentDetailBox{
+                #commentDetail{
+                    #comment{
+                        #writerInfo{
+                            #info{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 500px) {
+            #commentInputBox{
+                #inputProfile{
+                    display: flex;
+                }
+                #commentInput{
+                    display: none;
+                }
+                #commentInputMo{
+                    display: flex;
+                    width: calc(100% - 50px);
+                    height: 40px;
+                    padding-right: 40px;
+                    padding-bottom: 0;
+                    padding-left: 10px;
+                    margin-left: 8px;
+                    border-radius: 4px;
+                }
+                #uploadType{
+                    #uploadSecret{
+                        width: 100%;
+                    }
+                    #upload{
+                        position: absolute;
+                        width: fit-content;
+                        right: 2%;
+                        top: -9%;
+                        button{
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 380px){
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    }
+}

@@ -1,0 +1,136 @@
+
+@mixin profile() {
+    #profileBox{
+        display: flex;
+        width: 284px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid $grey01-color;
+        padding: 20px;
+        box-sizing: border-box;
+
+        #profileImg{
+            width: 95px;
+            height: 95px;
+            border: 1px solid $main-color;
+            border-radius: 100%;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            box-sizing: border-box;
+
+            img, svg{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 5px;
+                overflow: hidden;
+                border-radius: 100%;
+                border: none;
+                box-sizing: border-box;
+                object-fit: cover;
+            }
+            svg{
+                width: 70%;
+                height: 70%;
+                margin-left: 2px;
+            }
+        }
+
+        #nickname{
+            display: flex;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            align-items: center;
+            h1{
+                display: inline-block;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 18px;
+                margin-right: 4.5px;
+            }
+            svg{
+                margin-top: 2px;
+            }
+        }
+
+        #stat{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            #statNum{
+                width: 33%;
+                text-align: center;
+                h2{
+                    font-weight: 600;
+                    font-size: 15px;
+                    line-height: 22px;
+                    cursor: pointer;
+                }
+                p{
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: $grey02-color;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #followBtn{
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            #follow{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 45px;
+                background-color: $main-color;
+                color: $white-color;
+                border-radius: 10px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 23px;
+            }
+            #following{
+                @extend #follow;
+                background-color: $white-color;
+                color: $main-color;
+                border: 1px solid $main-color;
+                box-sizing: border-box;
+            }
+        }
+
+        #intro{
+            width: 90%;
+            margin-bottom: 22px;
+            p, a{
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                color: $grey02-color;
+            }
+            p{
+                width: 100%;
+                text-align: center;
+                word-break: break-word;
+                white-space: pre-line;
+                margin-bottom: 8px;
+            }
+            #link{
+                display: block;
+                width: 100%;
+                color: $main-color;
+                text-align: center;
+                margin: 0;
+            }
+        }
+    }
+}

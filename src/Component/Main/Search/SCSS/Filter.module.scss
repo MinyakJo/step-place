@@ -1,0 +1,120 @@
+
+@mixin filter{
+    #filterBox{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        background-color: $white-color;
+        overflow: hidden;
+
+        transition: height 1.0s, opacity 1.0s, padding 1.0s;
+
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
+
+        #filter{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 900px;
+            align-items: center;
+            padding-top: 30px;
+            box-sizing: border-box;
+
+            //적용, 초기화, 취소 버튼
+            #filterBtnBox{
+                display: flex;
+                width: 100%;
+                justify-content: flex-end;
+                align-items: center;
+                margin-bottom: 24px;
+                button{
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 100%;
+                    color: $white-color;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    margin-right: 15px;
+                    border-radius: 5px;
+                }
+    
+                #reset{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 100%;
+                    color: $grey02-color;
+                    padding: 0;
+                }
+    
+                #cancel{
+                    background-color: $grey02-color;
+                }
+    
+                #apply{
+                    background-color: $main-color;
+                }
+            }
+
+            //필터 목록
+            #filterTypeBox{
+                display: flex;
+                width: 100%;
+
+                //필터 박스 하나
+                #filterType{
+                    display: flex;
+                    flex-direction: column;
+                    width: 25%;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    box-sizing: border-box;
+
+                    h1{
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 150%;
+                    }
+                    #line{
+                        width: 100%;
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+                        color: #DEDEDE;
+                    }
+
+                    //필터 세부목록
+                    #type{
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        button{
+                            display: flex;
+                            margin-bottom: 10px;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 150%;
+                            color: $grey-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+            #filter{
+                #filterTypeBox{
+                    flex-wrap: wrap;
+                    #filterType{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

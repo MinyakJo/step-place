@@ -1,0 +1,387 @@
+
+@mixin postingMain(){
+    #posting{        
+        //제목과 내용
+        #contents{
+            #feedDeleteButton{
+                svg{
+                    margin-right: 8px;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 96px;
+                height: 36px;
+                color: $white-color;
+                background: #FF7373;
+                border-radius: 10px;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 23px;
+                top: 25px;
+                right: 3%;
+                margin-left: 8px;
+            }
+            #titleBox{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                #title{
+                    width: calc(100% - 96px);
+                    padding-left: 8px;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    font-size: 18px;
+
+                    @media screen and (max-width: 500px) {
+                        width: calc(100% - 85px);
+                        font-size: 15px;
+                    }
+                }
+            }
+            
+            textarea{
+                width: 100%;
+                height: 310px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                padding-left: 8px;
+                margin-bottom: 10px;
+                font-size: 16px;
+                border-radius: 4px;
+                box-sizing: border-box;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 13px;
+                    height: 170px;
+                }
+            }
+        }
+
+        //사진 선택
+        #upload{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            
+            //이미지 리스트
+            #uploadList{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                p{
+                    color: $grey02-color;
+                }
+            }
+
+            //업로드 버튼
+            #imgUploadBtn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: $border-radius;
+                background-color: $grey01-color;
+                padding-left: 10px;
+                padding-right: 10px;
+                flex-wrap: wrap;
+                box-sizing: border-box;
+                svg{
+                    margin: 0;
+                }
+                #previewBox{
+                    display: flex;
+                    position: relative;
+                    margin-left: 8px;
+                    margin-right: 8px;
+                    padding-top: 22px;
+                    padding-bottom: 22px;
+                    img{
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                    button{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        width: 13px;
+                        height: 13px;
+                        top: calc(2% + 22px);
+                        right: 3%;
+                        border: 1px solid $black-color;
+                        box-sizing: border-box;
+                        background-color: $white-color;
+                        border-radius: 100%;
+                        z-index: 2;
+                    }
+                    #cancelBtn{
+                        margin: 0;
+                    }
+                    #firstImg{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        width: 100%;
+                        height: calc(100% - 44px);
+                        border-radius: 10px;
+                        position: absolute;
+                        background-color: rgba($black-color, 0.3);
+                        color: $white-color;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: normal;
+                        box-sizing: border-box;
+                    }
+                    #imgBox{
+                        z-index: 1;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        width: 40px;
+                        height: 40px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        #firstImg{
+                            width: 40px;
+                            height: 40px;
+                            font-weight: 400;
+                            font-size: 10px;
+                            line-height: normal;
+                            box-sizing: border-box;
+                        }
+                        button{
+                            top: 20%;
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
+                }
+                #fileAddBtn{
+                    padding: 18px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+
+                    #small{
+                        display: none;
+                    }
+                }
+                @media screen and (max-width: 500px) {
+                    width: fit-content;
+                    min-width: 40px;
+                    height: fit-content;
+                    min-height: 40px;
+                    #fileAddBtn{
+                        padding: 0;
+
+                        #big{
+                            display: none;
+                        }
+                        #small{
+                            display: block;
+                            padding-top: 8px;
+                            padding-bottom: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        //장소 선택
+        #spot{
+            @extend #upload;
+
+            button{
+                color: $grey02-color;
+                border: 1px solid $grey02-color;
+                border-radius: 30px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 8px;
+                padding-right: 8px;
+                font-size: 16px;
+                background-color: transparent;
+            }
+
+            @media screen and (max-width: 500px) {
+                button{
+                    border: 0;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        //이동수단
+        #trans{
+            display: flex;
+            width: 100%;
+            align-items: center;
+
+            input{
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 150%;
+                border-radius: 4px;
+            }
+
+            #styleBox{
+                display: flex;
+                flex-grow: 1;
+            }
+
+            #transComboBox{
+                display: none;
+                position: relative;
+            }
+            @media screen and (max-width: 500px) {
+                #styleBox{
+                    justify-content: flex-end;
+                }
+                #radioBox{
+                    display: none;
+                }
+                #transComboBox{
+                    display: flex;
+
+                    input{
+                        padding-right: 25px;
+                    }
+                }
+
+                #comboBox{
+                    display: flex;
+                    width: 120px;
+                    padding: 4px;
+                    height: fit-content;
+                    border: none;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 150%;
+                    color: $grey-color;
+                    box-sizing: border-box;
+                    input, button{
+                        width: 100%;
+                        height: fit-content;
+                        border: none;
+                        border-radius: $border-radius;
+                        padding-left: 18px;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 150%;
+                        box-sizing: border-box;
+                    }
+
+                    input{
+                        border-radius: 4px;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        font-size: 14px;
+                    }
+                }
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    width: 120px;
+                    align-self: flex-start;
+                    height: fit-content;
+                    border: none;
+                    margin: 0;
+                    background-color: $white-color;
+                    border-radius: $border-radius;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 170%;
+                    padding-left: 18px;
+                    padding-right: 18px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    border: 1px solid $grey02-color;
+                    box-sizing: border-box;
+                    appearance: none;
+                    top: 27px;
+                    li{
+                        display: flex;
+                        font-weight: 350;
+                        margin-bottom: 4px;
+                        font-size: 16px;
+                        line-height: 170%;
+                        color: $grey02-color;
+                        cursor: pointer;
+                    }
+                    z-index: 2;
+
+                    @media screen and (max-width: 500px) {
+                        font-size: 14px;
+                        li{
+                            font-size: 14px;
+                        }
+                    }
+                }
+                #icon{
+                    position: static;
+                    width: 20px;
+                    height: 20px;
+                }
+                svg{
+                    position: absolute;
+                    width: 14px;
+                    height: 8px;
+                    top: calc(50% - 4px);
+                    right: 5%;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        //이동시간
+        #transTime{
+            @extend #upload;
+            #inputBox{
+                flex-grow: 1;
+            }
+            input{
+                width: calc(100% - 20px);
+                padding: 8px;
+                border: 1px solid $grey02-color;
+                border-radius: 4px;
+            }
+            @media screen and (max-width: 500px){
+                input{
+                    width: calc((100% - 60px));
+                    text-align: end;
+                    margin-left: 40px;
+                }
+            }
+        }
+        
+        //광고 여부
+        #ad{
+            @extend #upload;
+            justify-content: space-between;
+        }
+
+        //미디어 쿼리
+        @media screen and (max-width: 500px){
+            #contents{
+                #feedDeleteButton{
+                    svg{
+                        margin-right: 4px;
+                    }
+                    font-size: 14px;
+                    height: 30px;
+                    width: 85px;
+                }
+            }
+        }
+    }
+}

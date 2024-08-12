@@ -1,0 +1,149 @@
+@import "../../../../variable.module.scss";
+@import "./Top.module.scss";
+@import "./Main.module.scss";
+@import "./Bottom.module.scss";
+@import "../../Login/SCSS/Footer.module.scss";
+
+#main{
+    @include font_type("Noto");
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+//메인
+#feedPosting{
+    width: 100%;
+    max-width: 730px;
+    min-width: 360px;
+    height: fit-content;
+    background-color: $white-color;
+    padding: 32px 30px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: all 1s;
+
+    @media screen and (max-width: 500px) {
+        margin-top: 16px;
+        padding: 17px 20px;
+        border-radius: 0;
+    }
+
+    input[type="radio"]{
+        width: 17px;
+        height: 17px;
+        margin-right: 8px;
+    }
+    
+    //선긋기
+    #line{
+        width: 100%;
+        height: 1px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+
+        @media screen and (max-width: 500px) {
+            margin: 4px 0;
+        }
+    }
+    #lastLine, #firstLine{
+        @extend #line;
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
+    }
+    p{
+        margin-right: 10px;
+        width: fit-content;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+    }
+    //가이드 옆 그림
+    #icon{
+        margin-right: 8px;
+        min-width: 20px;
+        min-height: 20px;
+    }
+    //그림 옆 글자 ex)이동수단, 이동시간, 장소, 누구와함께 등등
+    #guide{
+        display: inline-flex;
+        min-width: 115px;
+        box-sizing: border-box;
+        align-items: baseline;
+    }
+    #radio{
+        display:flex;
+        flex-wrap: wrap;
+    }
+
+    #guideBox{
+        display: flex;
+        align-items: center
+    }
+
+    input, textarea{
+        border-radius: 4px;
+    }
+
+    //글쓰기 상단
+    @include postingTop();
+
+    //글쓰기 메인
+    @include postingMain();
+
+    //미디어 쿼리
+    @media screen and (max-width: 650px){
+        input[type="radio"]{
+            width: 15px;
+            height: 15px;
+        }
+        p{
+            font-size: 14px;
+            margin-right: 8px;
+        }
+        #guide{
+            min-width: 95px;
+        }
+    }
+    @media screen and (max-width: 582px){
+        #guide{
+            min-width: 75px;
+        }
+    }
+    @media screen and (max-width: 500px){
+        #guide{
+            min-width: 70px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}
+
+//장소추가 버튼
+#feedAdd{
+    button{
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+
+        @media screen and (max-width: 500px) {
+            margin-top: 18px;
+            font-size: 14px;
+        }
+    }
+    svg{
+        margin-right: 8px;
+    }
+}
+
+//글쓰기 하단
+@include postinBottom();

@@ -1,0 +1,42 @@
+@import "../../../../variable.module.scss";
+
+main{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    width: 100%;
+    height: calc(100% - 70px);
+    min-width: 700px;
+    overflow-x: hidden;
+    top: 70px;
+    background: #F7FAFA;
+    @include font_type("Noto");
+
+    //스크롤바
+    &::-webkit-scrollbar{
+        width: 8px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $grey02-color;
+        border-radius: 10px;
+    }
+
+    @media screen and (max-width: 500px) {
+        top:0;
+        bottom: 65px;
+        width: 100%!important;
+        height: calc(100% - 65px);
+        min-width: 360px;
+        left: 0!important;
+        flex-direction: column;
+        justify-content: flex-start;
+        &::-webkit-scrollbar{
+            width: 2px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: $grey02-color;
+            border-radius: 10px;
+        }
+    }
+}

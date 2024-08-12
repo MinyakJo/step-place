@@ -1,0 +1,53 @@
+@import "../../../variable.module.scss";
+@import "./Btn.module.scss";
+@import "./Profile.module.scss";
+@import "./Logout.module.scss";
+@import "./BtnList.module.scss";
+
+#leftBar{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 290px;
+    height: calc(100% - 70px);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    background-color: $white-color;
+    top: 70px;
+    z-index: 4;
+    padding-right: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    @include font_type("Noto");
+
+    &::-webkit-scrollbar{
+        width: 6px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $grey02-color;
+        border-radius: 10px;
+    }
+    &:hover{
+        overflow-y: auto;
+    }
+
+
+    //위쪽 프로필
+    @include profile();
+
+    //아래 버튼 목록
+    @include btnList();
+
+    //로그아웃
+    @include logout();
+}
+
+#bottomBar{
+    display: none
+}
+
+@media screen and (max-width:500px) {
+    #leftBar{
+        display: none;
+    }
+}

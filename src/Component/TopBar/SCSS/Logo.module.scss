@@ -1,0 +1,35 @@
+
+@mixin logo(){
+    #logo{
+        height: 40px;
+        width: 33%;
+        padding-left: 35px;
+        box-sizing: border-box;
+        a{
+            width: fit-content;
+            height: fit-content;
+        }
+    
+        //미디어 쿼리
+        @media screen and (max-width: 670px){
+            width: 30%;
+            a{
+                #logoImg{
+                    width: 140px;
+                }
+            }
+        }
+        @media screen and (max-width: 560px){
+            width: 15%;
+            a{
+                #logoImg{
+                    width: 120px;
+                }
+            }
+        }
+        @media screen and (max-width: 433px){
+            width: fit-content;
+            justify-content: center;
+        }
+    }
+}

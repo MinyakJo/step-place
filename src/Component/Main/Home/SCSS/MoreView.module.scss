@@ -1,0 +1,80 @@
+@import "../../../../variable.module.scss";
+
+#topMoreViewBox{
+    position: absolute;
+    left: -55%;
+    top: 100%;
+    margin-top: 10px;
+    z-index: 5;
+    max-width: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+        
+    #polygonBox{
+        display: flex;
+        width: 100%;
+        height: 10px;
+        justify-content: center;
+        box-sizing: border-box;
+        bottom: 0;
+    }
+
+    #moreView{
+        display: flex;
+        flex-direction: column;
+        background-color: $white-color;
+        width: 140px;
+        align-items: center;
+        border-radius: 10px;
+
+        p{
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 100%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    
+        div{
+            padding: 22px;
+            padding-top: 12px;
+            padding-bottom:  12px;
+            border-top: 1px solid $grey01-color;
+            border-bottom: 1px solid $grey01-color;
+        }
+
+        a{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+#feedMoreViewBox{
+    @extend #topMoreViewBox;
+    max-width: none;
+    left: -70px;
+    top: 100%;
+    width: 140px;
+
+    #moreView{
+        p{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+        }
+        button{
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        left: -120px;
+    }
+}

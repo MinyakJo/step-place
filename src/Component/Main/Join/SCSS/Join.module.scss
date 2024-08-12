@@ -1,0 +1,154 @@
+@import "../../../../variable.module.scss";
+@import "./Top.module.scss";
+@import "./JoinUp.module.scss";
+@import "./Consent.module.scss";
+@import "./Email.module.scss";
+@import "../../Login/SCSS/Footer.module.scss";
+
+#logo{
+    display: none;
+    @media screen and (max-width: 500px) {
+        display: flex;
+        z-index: 3;
+        top: 0;
+        height: 100%;
+        padding: 15px;
+        width: 100%;
+        height: 45px;
+        box-sizing: border-box;
+        background-color: white;
+    }
+}
+
+#main{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+
+    @media screen and (max-width: 500px) {
+        z-index: 3;
+        top: 0;
+        height: 100%;
+    }
+}
+#join{
+    @include font_type("Noto");
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 588px;
+    align-items: center;
+    height: fit-content;
+    box-shadow: 0px 1px 8px rgba(185, 185, 185, 0.1);
+    border-radius: $border-radius;
+    background-color: $white-color;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 74px;
+    padding-right: 74px;
+    box-sizing: border-box;
+    transition: all 0.7s;
+
+    div{
+        width: 100%;
+    }
+    
+    //특정 상황에 띄우는 매세지
+    #hiddenMsg{
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        margin-top: 9px;
+        margin-bottom: 15px;
+        color: red;
+
+        @media screen and (max-width: 500px) {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 150%;
+            margin-top: 6px;
+            margin-bottom: 10px;
+        }
+    }
+    #nickHiddenMsg{
+        @extend #hiddenMsg;
+        position: absolute;
+        width: fit-content;
+        right: 2%;
+        top: 8%;
+    }
+
+    //회원가입 텍스트 부분
+    @include top();
+
+    //회원가입 정보 입력칸
+    #bottom{
+        max-width: 438px;
+
+        //입력칸
+        #inputBox{
+            margin-bottom: 16px;
+            border-radius: $border-radius;
+            #inputLine{
+                position: relative;
+                width: calc(100% - 2px);
+                height: fit-content;
+                border-radius: $border-radius;
+                input{
+                    width: 100%;
+                    height: 45px;
+                    border: none;
+                    border-radius: $border-radius;
+                    padding-left: 18px;
+                    padding-right: 18px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 150%;
+                    box-sizing: border-box;
+
+                    @media screen and (max-width: 500px) {
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 150%;
+                        padding: 13px;
+                    }
+                }
+            }
+            
+            //email용 css
+            @include email();
+        }
+
+        //email 인증버튼 누를시 나오는 텍스트와 메시지
+        @include emailCode();
+
+        //동의 체크박스
+        @include consent();
+        
+        //회원가입 버튼
+        @include joinUp();
+    }
+    @media screen and (max-width: 540px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #main{
+        #join{
+            padding-left: 10px;
+            padding-right: 10px;
+            height: fit-content;
+            margin: 0;
+        }
+        footer{
+            display: none;
+        }
+    }
+}

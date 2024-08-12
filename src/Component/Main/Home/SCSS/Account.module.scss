@@ -1,0 +1,185 @@
+@import "../../../../variable.module.scss";
+
+#accountList, #searchAccountList{
+    width: 100%;
+    max-width: 900px;
+    height: calc(100% - 161px);
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: $white-color;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 2;
+    border-radius: 10px;
+
+    transition: all 0.7s;
+    @include font_type("Noto");
+
+    &::-webkit-scrollbar{
+        width: 4px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $grey02-color;
+        border-radius: 10px;
+    }
+
+    @media screen and (max-width:500px) {
+        height: 100%;
+        padding: 20px;
+        padding-bottom: 0;
+    }
+
+    //계정 전체
+    #accountBox{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        box-sizing: border-box;
+
+        //프로필 사진
+        #profile{
+            display: flex;
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            border-radius: 100%;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: $grey01-color;
+            svg{
+                width: 24px;
+                height: 26px;
+            }
+            img{
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+            }
+            @media screen and (max-width:500px) {
+                width: 55px;
+                height: 55px;
+                min-width: 55px;
+
+                img{
+                    width: 55px;
+                    height: 55px;
+                }
+            }
+        }
+
+        //닉네임, 소개글
+        #account, #moAccount{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            margin-left: 14px;
+            margin-right: 10px;
+            max-width: 678px;
+            min-width: 482px;
+            box-sizing: border-box;
+
+            #nickname{
+                display: flex;
+                align-items: center;
+                h1{
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 150%;
+                    margin-right: 4px;
+                    cursor: pointer;
+                }
+                @media screen and (max-width: 500px) {
+                    h1{
+                        font-size: 16px;
+                        line-height: 150%;
+                    }
+                }
+            }
+            #intro{
+                width: 100%;
+                p{
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 150%;
+                    overflow: hidden;
+                    color: $grey-color;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    text-align: start;
+                    cursor: pointer;
+                }
+            }
+            @media screen and (max-width: 500px) { 
+                display: none;
+                min-width: 0;
+            }
+        }
+        #moAccount{
+            display: none;
+            @media screen and (max-width: 500px) { 
+                margin-left: 8px;
+                flex-grow: 1;
+                display: flex;
+            }
+        }
+        //팔로우,팔로잉 버튼
+        #btnBox, #searchBtnBox{
+            margin-left: auto;
+            min-width: 84px;
+            button{
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                border-radius: 10px;
+                border: 1px solid $main-color;
+            }
+
+            #following{
+                color: $main-color;
+            }
+            #follow{
+                color: $white-color;
+                background-color: $main-color;
+            }
+
+            @media screen and (max-width: 500px) {
+                min-width: 50px;
+                button{
+                    width: 50px;
+                    height: 25px;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 17px;
+                    padding: 0;
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        #searchBtnBox{
+            @media screen and (max-width:500px) {
+                display: none;
+            }
+        }
+    }
+
+    #line{
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+#searchAccountList{
+    margin-top: 120px;
+
+    @media screen and (max-width: 500px) {
+        margin-top: 80px;
+        height: calc(100% - 140px)
+    }
+}

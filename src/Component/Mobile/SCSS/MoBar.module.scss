@@ -1,0 +1,58 @@
+@import "../../../variable.module.scss";
+
+#MobileBar{
+    bottom: 0;
+    position: fixed;
+}
+
+#bottomBar{
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    height: 65px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    a, button{
+        display: flex;
+        width: 32px;
+        height: 32px;
+        justify-content: center;
+        align-items: center;
+        svg{
+            margin-top: 4px;
+        }
+    }
+
+    #profileBtn{
+        display: flex;
+        width: 34px;
+        height: 34px;
+        border-radius: 100%;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        background-color: $grey01-color;
+        margin: 0;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    #login{
+        svg{
+            margin: 0;
+        }
+    }
+
+    @media screen and (min-width: 500px) {
+        display: none;
+    }
+}

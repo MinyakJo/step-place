@@ -1,0 +1,32 @@
+
+@mixin loginInput(){
+    #inputBox{
+        width: 100%;
+        margin-top: 30px;
+        input{
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.03em;
+            width: 100%;
+            height: 50px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            border: 1px solid $grey02-color;
+            border-radius: 10px;
+            margin-top: 16px;
+            padding-left: 18px;
+            padding-right: 18px;
+            box-sizing: border-box;
+        }
+        @media screen and (max-width: 500px){
+            input{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 150%;
+                height: 40px;
+                padding: 14px;
+            }
+        }
+    }
+}

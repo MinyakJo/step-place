@@ -1,0 +1,53 @@
+@import "../../../../variable.module.scss";
+@import "./FollowPage.module.scss";
+
+#main{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    @include font_type("Noto");
+
+    @media screen and (max-width: 500px) {
+        height: 100%;
+        background-color: white;
+    }
+}
+
+#title{
+    @include title();
+}
+
+#activityTypeBox{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+    button{
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 29px;
+        margin-left: 16px;
+        margin-right: 16px;
+        padding-bottom: 6px;
+    }
+
+    @media screen and (max-width: 500px) {
+        background-color: white;
+        padding: 0;
+        button{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 23px;
+        }
+    }
+}
+
+#footer{
+    margin-bottom: 12px;
+
+    @media screen and (max-width: 500px) {
+        display: none;
+    }
+}

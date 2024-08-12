@@ -1,0 +1,21 @@
+@import "../../../../variable.module.scss";
+@import "./Type.module.scss";
+@import "./Filter.module.scss";
+
+
+#main{
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    @include font_type("Noto");
+    
+    @media screen and (max-width: 500px) {
+        background-color: white;
+    }
+}
+
+//검색옵션, 타입 등
+@include searchType();
+//필터창
+@include filter();

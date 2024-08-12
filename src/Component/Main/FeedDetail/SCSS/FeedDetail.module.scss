@@ -1,0 +1,84 @@
+@import "../../../../variable.module.scss";
+@import "./Top.module.scss";
+@import "./Contents.module.scss";
+@import "./Trans.module.scss";
+@import "./Map.module.scss";
+@import "./Comment.module.scss";
+@import "../../Login/SCSS/Footer.module.scss";
+
+#main{
+    min-width: 0;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    @media screen and (max-width: 500px){
+        top: 0;
+        z-index: 2;
+        height: calc(100% - 65px);
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+}
+
+#feedBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1126px;
+    background-color: $white-color;
+    margin-top: 40px;
+    margin-bottom: 145px;
+    padding: 50px 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    z-index: 2;
+
+    #line{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #lastLineBox{
+        box-sizing: border-box;
+        width: 100%;
+        @media screen and (max-width: 500px){
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    #lastLine{
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    @include font_type("Noto");
+
+    //게시글 상세보기 상단
+    @include top();
+
+    //게시글 사진 글
+    @include contents();
+
+    //이동수단
+    @include trans();
+
+    //맵
+    @include map(); 
+
+    //댓글
+    @include comment();
+
+    @media screen and (max-width: 803px) {
+        margin: 0;
+        padding: 40px;
+    }
+    @media screen and (max-width: 500px) {
+        padding: 0;
+        padding-top: 20px;
+    }
+}
+
+#footer{
+    margin-top: 36px;
+}

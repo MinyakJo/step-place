@@ -1,0 +1,93 @@
+
+@mixin postinBottom(){
+    #feedPostingBottom{
+        @extend #feedPosting;
+        margin-bottom: 130px;
+
+        @media screen and (max-width: 500px) {
+            margin-top: 38px;
+            margin-bottom: 18px;
+        }
+    
+        //해시태그
+        #tag{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            input{
+                width: 70%;
+                margin-left: auto;
+                color: $main-color;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                border-radius: 4px;
+                padding: 8px;
+
+                @media screen and (max-width: 500px) {
+                    width: calc((100% - 60px));
+                    text-align: end;
+                    margin-left: 40px;
+                }
+            }
+        }
+    
+        //공개/비공개
+        #private{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            #privateRadio{
+                margin-left: auto;
+            }
+        }
+    }
+
+     //확인 취소 버튼
+     #btnBox, #moBtnBox{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        a, button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 60px;
+            box-sizing: border-box;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 23px;
+        }
+        #saveBtn{
+            width: 160px;
+            max-width: 156px;
+            height: 48px;
+            background-color: $main-color;
+            color: $white-color;
+        }
+        #cancelBtn{
+            width: 160px;
+            height: 48px;
+            background-color: #E8E8E8;
+            color: $grey-color;
+        }
+    }
+
+    #btnBox{
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
+    }
+
+    #moBtnBox{
+        display: none;
+        @media screen and (max-width: 500px) {
+            display: flex;
+            margin-bottom: 110px;
+        }
+    }
+}

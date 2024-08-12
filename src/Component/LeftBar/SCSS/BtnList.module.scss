@@ -1,0 +1,17 @@
+
+@mixin btnList(){
+    #menu{
+        width: 100%;
+        min-height: 427px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        // border-bottom: 1px solid $grey01-color;
+        box-sizing: border-box;
+        margin-bottom: auto;
+        
+        //버튼
+        @include leftbarBtn();
+    }
+}

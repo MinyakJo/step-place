@@ -1,0 +1,32 @@
+
+@mixin top(){
+    #top{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        border-bottom: 1px solid $grey01-color;
+        box-sizing: border-box;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 20px;
+        svg{
+            margin-right: 8px;
+        }
+        h1{
+            color: $main-color;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 115%;
+        }
+
+        #moAlarmBtn{
+            display: none;
+        }
+        @media screen and (max-width: 500px) {
+            padding: 20px;
+            #moAlarmBtn{
+                display: flex;
+            }
+        }
+    }
+}

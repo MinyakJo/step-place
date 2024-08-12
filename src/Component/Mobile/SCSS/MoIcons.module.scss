@@ -1,0 +1,17 @@
+@import "../../../variable.module.scss";
+
+#currentStat{
+    display:flex;
+    width: fit-content;
+    #iconBox{
+        display: flex;
+        align-items: center;
+        a, button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+    }
+}

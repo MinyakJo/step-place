@@ -1,0 +1,68 @@
+
+@mixin trans(){
+
+    //이동수단, 이동시간을 보여주는 박스
+    #transBox{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        //이동수단, 이동시간
+        #trans{
+            display: flex;
+            width: fit-content;
+            align-items: center;
+            background-color: $grey01-color;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 60px;
+            z-index: 1;
+            p{
+                text-align: center;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 150%;
+                margin-left: 10px;
+                margin-right: 10px;
+                max-width: 60px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            #accent{
+                max-width: none;
+                min-width: 52px;
+                color: $main-color;
+            }
+            #shortLine{
+                background-color: $grey02-color;
+            }
+            #check{
+                margin-left: 13px;
+                margin-right: 13px;
+            }
+        }
+        //선
+        #line{
+            position: absolute;
+            z-index: 0;
+        }
+
+        @media screen and (max-width: 500px){
+            margin-bottom: 30px;
+
+            #trans{
+                justify-content: center;
+                margin-left: 20px;
+                margin-right: 20px;
+                padding: 3px 5px;
+
+                p{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

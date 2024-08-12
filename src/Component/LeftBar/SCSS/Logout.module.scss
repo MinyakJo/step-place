@@ -1,0 +1,15 @@
+
+@mixin logout(){
+    #logout{
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+
+        //로그아웃 버튼
+        @include leftbarBtn();
+    }
+}

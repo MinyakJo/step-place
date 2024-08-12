@@ -1,0 +1,167 @@
+@import "../../../../variable.module.scss";
+@import "./FollowPage.module.scss";
+
+#main{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    @include font_type("Noto");
+
+    @media screen and (max-width: 500px) {
+        padding-left: 22px;
+        padding-right: 22px;
+        box-sizing: border-box;
+    }
+}
+#title{
+    @include title();
+
+    @media screen and (max-width: 500px){
+        background-color: transparent;
+    }
+}
+#writerAppBox{
+    max-width: 712px;
+    width: 100%;
+    padding: 22px;
+    background-color: $white-color;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    #guide{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin-top: 14px;
+        margin-bottom: 24px;
+        #num{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $main-color;
+            color: $white-color;
+            border-radius: 100%;
+            width: 28px;
+            height: 28px;
+            margin-right: 7px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 150%;
+        }
+        #text{
+            color: $main-color;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+        }
+        #orderBox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 6px;
+            padding-right: 16px;
+            padding-left: 16px;
+            background-color: $light-blue;
+            box-sizing: border-box;
+            margin-left: auto;
+            p{
+                display: inline;
+                color: $main-color;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+            }
+            @media screen and (max-width: 500px) {
+                width: 44px;
+                empty-cells: 26px;
+            }
+        }
+    }
+
+    #question{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        h1{
+            width: calc(100% - 20px);
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+            color: $grey-color;
+            padding-bottom: 25px;
+            border-bottom: 1px solid $grey03-color;
+        }
+        @media screen and (max-width: 500px) {
+            h1{
+                padding-bottom: 11px;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    #answer{
+        display: flex;
+        width: 100%;
+        position: relative;
+        p,textarea{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+        }
+        p{
+            position: absolute;
+            top: 12px;
+            left: 54px;
+            font-weight: 500;
+            color: $grey02-color;
+        }
+        #accent{
+            color: $main-color;
+            top: 12px;
+            left: 10px;
+            @include font_type("Noto");
+        }
+        textarea{
+            position: relative;
+            width: 100%;
+            height: 424px;
+            padding: 12px;
+            border-radius: 4px;
+        }
+
+        @media screen and (max-width: 500px) {
+            p,textarea{
+                font-size: 13px;
+                line-height: 16px;
+            }
+
+            p{
+                top: 12.5px;
+                left: 44px;
+            }
+            #accent{
+                left: 10px;
+            }
+        }
+    }
+}
+
+#btnBox{
+    display: flex;
+    margin-top: 40px;
+    #next{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 156px;
+        height: 48px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 23px;
+        border-radius: 60px;
+        color: $white-color;
+        background-color: $main-color;
+    }
+}

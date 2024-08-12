@@ -1,0 +1,176 @@
+
+@mixin icons(){
+    #currentStat{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 33%;
+        padding-right: 40px;
+        box-sizing: border-box;
+        
+        //아이콘박스
+        #iconBox{
+            display: flex;
+            width: fit-content;
+            height: fit-content;
+            align-items: center;
+
+            a, button{
+                margin-right: 50px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+        #line{
+            margin-right: 35px;
+            background-color: #E8E8E8;
+        }
+        #loginBtn{
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #profileBtn{
+                width: 38px;
+                height: 38px;
+                margin-right: 8px;
+            }
+            #profileImg, #profileImgNone{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                object-fit: cover;
+            }
+            #profileImgNone{
+                padding: 8px;
+                background-color: $grey01-color;
+                box-sizing: border-box;
+            }
+            #profileNickname{
+                display: block;
+                max-width: 45px;
+                overflow: hidden;          
+                white-space: nowrap;                   
+                text-overflow: ellipsis;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+         //미디어쿼리
+        @media screen and (max-width: 1588px) {
+            #iconBox{
+                a, button{
+                    margin-right: 45px;
+                }
+            }
+        }
+        @media screen and (max-width: 1527px){
+            #iconBox{
+                a, button{
+                    margin-right: 40px;
+                }
+            }
+            #line{
+                margin-right: 35px;
+            }
+        }
+        @media screen and (max-width: 1420px){
+            #iconBox{
+                a, button{
+                    margin-right: 35px;
+                }
+            }
+        }
+        @media screen and (max-width: 1350px){
+            #iconBox{
+                a, button{
+                    margin-right: 30px;
+                }
+            }
+            #line{
+                margin-right: 25px;
+            }
+        }
+        @media screen and (max-width: 1222px){
+            #iconBox{
+                a, button{
+                    margin-right: 25px;
+                }
+            }
+        }
+        @media screen and (max-width: 1124px){
+            #iconBox{
+                a, button{
+                    margin-right: 20px;
+                }
+            }
+        }
+        @media screen and (max-width: 1082px){
+            #iconBox{
+                a, button{
+                    margin-right: 15px;
+                }
+            }
+            #login{
+                width: 70px;
+                svg{
+                    width: 100%;
+                }
+            }
+            #line{
+                margin-right: 15px;
+            }
+        }
+        @media screen and (max-width: 935px){
+            padding-right: 35px;
+            #loginBtn{
+                margin-right: 0px;
+            }
+            #login{
+                width: 60px;
+            }
+        }
+        @media screen and (max-width: 895px){
+            padding-right: 30px;
+            #line{
+                display: none;
+            }
+        }
+        @media screen and (max-width: 760px){
+            padding-right: 25px;
+        }
+        @media screen and (max-width: 760px){
+            padding-right: 10px;
+            #login{
+                width: 50pxs;
+            }
+        }
+        @media screen and (max-width: 670px){
+            padding-right: 5px;
+        }
+        @media screen and (max-width: 500px){
+            padding-right: 2px;
+            #feed{
+                display: none;
+            }
+            #home{
+                display: none;
+            }
+        }
+        @media screen and (max-width: 416px){
+            #profileImg{
+                display:none;
+            }
+        }
+    }
+}

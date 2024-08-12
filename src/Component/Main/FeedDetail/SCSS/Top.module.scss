@@ -1,0 +1,312 @@
+
+@mixin top(){
+    #top{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        position: relative;
+        box-sizing: border-box;
+
+        //뒤로가기 버튼
+        #back{
+            margin-right: 22px;
+        }
+
+        //게시물 자세히보기 상단 작가 정보
+        #writerInfo{
+            display: flex;
+            align-items:  center;
+
+            //프로필 사진, 닉네임
+            #writer{
+                display: flex;
+                align-items:  center;
+                margin-right: 12px;
+
+                #profile{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 100%;
+                    background-color: $grey01-color;
+                    overflow: hidden;
+
+                    svg{
+                        width: 24px;
+                        height: 24px;
+                    }
+                    img{
+                        width: 48px;
+                        height: 48px;
+                        object-fit: cover;
+                    }
+                }
+                h1{
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 18px;
+                    margin-left: 12px;
+                    margin-right: 8px;
+
+                    cursor: pointer;
+                }
+            }
+
+            //게시글 올린 날짜
+            #date{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 150%;
+                color: $grey02-color;
+                margin-right: 12px;
+            }
+
+            //팔로우버튼
+            #follow{
+                background-color: $main-color;
+                color: $white-color;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                border-radius: 6px;
+            }
+            #following{
+                @extend #follow;
+                background-color: $white-color;
+                color: $main-color;
+                border: 1px solid $main-color;
+                box-sizing: border-box;
+            }
+        }
+
+        //게시물 자세히보기 상단 방문 정보
+        #visitInfo{
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+
+            //방문
+            #bgAccent{
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+            }
+
+            //방문 날짜
+
+            p{
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 100%;
+                color: $grey-color;
+                margin-right: 12px;
+            }
+            #accent{
+                color: $main-color;
+                margin-right: 6px;
+                @include font_type("Noto Serif");
+            }
+        }
+        #moreViewBox{
+            margin-left: 10px;
+            display: flex;
+            position: relative;
+        }
+        @media screen and (max-width: 1065px) {
+            #visitInfo{
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+
+        @media screen and (max-width: 803px) {
+            justify-content: space-between;
+            border-bottom: 1px solid $grey01-color;
+            padding-bottom: 20px;
+            #visitInfo{
+                display: none;
+            }
+            #writerInfo{
+                display: none;
+            }    
+        }
+        @media screen and (max-width: 500px) {  
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    #topMo{
+        display: none;
+        width: 100%;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+
+        //게시물 자세히보기 상단 작가 정보
+        #writerInfo{
+            display: flex;
+            align-items:  center;
+            justify-content: space-between;
+            width: 100%;
+
+            //프로필 사진, 닉네임
+            #writer{
+                display: flex;
+                align-items:  center;
+                margin-right: 12px;
+
+                #profile{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+                    background-color: $grey01-color;
+                    overflow: hidden;
+
+                    svg{
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                    }
+                }
+                #textBox{
+                    margin-left: 8px;
+                    #nickname{
+                        display: flex;
+                        h1{
+                            font-weight: 600;
+                            font-size: 18px;
+                            line-height: 18px;
+                            cursor: pointer;
+                            margin-right: 4px;
+                            flex-grow: 1;
+                        }
+                    }
+                    p{
+                        margin-top: 2px;
+                        display: flex;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            //게시글 올린 날짜
+            #date{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 150%;
+                color: $grey02-color;
+            }
+
+            //팔로우버튼
+            #follow{
+                background-color: $main-color;
+                color: $white-color;
+                min-width: 70px;
+                min-height: 30px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                border-radius: 6px;
+            }
+            #following{
+                @extend #follow;
+                background-color: $white-color;
+                color: $main-color;
+                border: 1px solid $main-color;
+                box-sizing: border-box;
+            }
+        }
+
+        //게시물 자세히보기 상단 방문 정보
+        #visitInfo{
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-top: 12px;
+
+            //방문
+            #bgAccent{
+                display: flex;
+                width: 32px;
+                height: 19px;
+                align-items: center;
+                margin-right: 10px;
+                border-radius: 2px;
+            }
+
+            //방문 날짜
+            p{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 100%;
+                color: $grey-color;
+                margin-right: 8px;
+            }
+            #accent{
+                color: $main-color;
+                margin-right: 4px;
+            }
+        }
+        @media screen and (max-width: 803px) {
+            display: flex;
+        }
+        @media screen and (max-width: 640px) {
+            #writerInfo{
+                #date{
+                    font-size: 12px;
+                }
+            }
+            #visitInfo{
+                #bgAccent{
+                    width: 30px;
+                    height: 17px;
+                    margin-right: 8px;
+                }
+                p{
+                    font-size: 12px;
+                    margin-right: 6px;
+                }
+            }
+        }
+        @media screen and (max-width: 500px) {
+            display: flex;
+            #writerInfo{
+                #date{
+                    font-size: 11px;
+                }
+            }
+            #visitInfo{
+                margin-bottom: 8px;
+                #bgAccent{
+                    width: 24px;
+                    height: 14px;
+                    margin-right: 3px;
+                }
+                p{
+                    font-size: 11px;
+                    margin-right: 4px;
+                }
+                #accent{
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+}

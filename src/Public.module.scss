@@ -1,0 +1,133 @@
+@import "./variable.module.scss";
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    &::-webkit-scrollbar{
+        width: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $grey02-color;
+        border-radius: 10px;
+    }
+}
+button, input, a, textarea, pre{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    color: black;
+    @include font_type("Noto");
+}
+button{
+    cursor: pointer;
+}
+input::placeholder, textarea::placeholder{
+    color: $grey02-color;
+}
+input:focus, textarea:focus{
+    outline: 1px solid $main-color;
+}
+input[type="date"]{
+    max-width: 130px;
+    border-radius: 30px;
+    color: $grey-color;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    box-sizing: border-box;
+    min-width: 112px;
+    width: 100%;
+
+    &::before {
+        content: attr(data-placeholder);
+        width: 100%;
+    }
+    &:focus::before, &:valid::before{
+        display: none;
+    }
+    @media screen and (max-width: 500px) {
+        font-size: 14px;
+    }
+}
+input[type="checkbox"]{
+    appearance: none;
+    border: 1px solid $grey03-color;
+
+    &:checked{
+        background-image: url("./Component/SVG/check.svg");
+        background-size: cover;
+    }
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+div{
+    width: fit-content;
+    height: fit-content;
+}
+h1, h2, p{
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+textarea{
+    resize: none;
+    border: none;
+}
+
+#radioList{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    button{
+        width: fit-content;
+        color: $grey-color;
+        margin-right: 14px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    #radioType{
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    #radioTypeDirect{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        input[type="text"]{
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid $grey02-color;
+            border-radius: $border-radius;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body{
+        overflow-y: auto;
+        &::-webkit-scrollbar{
+            width: 2px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: $grey02-color;
+            border-radius: 10px;
+        }
+    }
+}

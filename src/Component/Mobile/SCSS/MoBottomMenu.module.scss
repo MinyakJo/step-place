@@ -1,0 +1,50 @@
+@import "../../../variable.module.scss";
+@import "../../../Public.module.scss";
+
+#moBottomMenu{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    background-color: white;
+    z-index: 4;
+    border-radius: 20px 20px 0px 0px;
+    bottom: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: flex-end;
+    transition: bottom 1.0s;
+
+    @media screen and (max-width: 500px) { 
+        display: flex;
+    }
+
+    button, a{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 23px;
+        margin: 20px 0px;
+        @include font_type("Noto Thin");
+        svg{
+            margin-right: 12px;
+        }
+    }
+    #btnBox{
+        display: flex;
+        flex-direction: column;
+        padding-top: 18px;
+        box-sizing: border-box;
+    }
+}
+
+#overlay{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0.3;
+    z-index: 4;
+    cursor: pointer;
+    overflow: hidden;
+}

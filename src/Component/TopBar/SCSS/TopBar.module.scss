@@ -1,0 +1,34 @@
+@import "../../../variable.module.scss";
+@import "./Search.module.scss";
+@import "./Icons.module.scss";
+@import "./Logo.module.scss";
+
+//상단바 CSS
+#topBar{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 69px;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 1px rgba(141, 134, 134, 0.1);
+    z-index: 2;
+
+    @include font_type("Noto");
+
+    //로고
+    @include logo();
+
+    //검색창
+    @include search();
+
+    //아이콘들
+    @include icons();
+}
+
+@media screen and (max-width:500px) {
+    #topBar{
+        display: none;
+    }
+}

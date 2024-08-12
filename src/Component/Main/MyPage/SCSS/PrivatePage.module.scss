@@ -1,0 +1,28 @@
+@import "../../../../Public.module.scss";
+
+#main{
+    align-items: center;
+    width: 100%;
+}
+
+#guideBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    max-width: 460px;
+    max-height: 204px;
+    padding: 60px;
+    box-sizing: border-box;
+    background-color: $white-color;
+    border-radius: $border-radius;
+
+    h1{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        color: $grey-color;
+        margin-top: 20px;
+    }
+}

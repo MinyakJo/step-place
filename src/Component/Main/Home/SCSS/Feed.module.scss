@@ -1,0 +1,438 @@
+@import "../../../../variable.module.scss";
+
+#feedList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    height: fit-content;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    z-index: 2;
+
+    transition: all 0.7s;
+    @include font_type("Noto");
+}
+#searchFeedList{
+    @extend #feedList;
+    margin-top: 120px;
+}
+
+#feedBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 350px;
+    bottom: 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: $white-color;
+    box-sizing: border-box;
+
+    transition: all 0.7s;
+
+    //피드 상단 방문날짜
+    #feedText{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        letter-spacing: -0.03em;
+        color: $grey-color;
+        box-sizing: border-box;
+        #isSecret{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: auto;
+
+            @media screen and (max-width: 500px) {
+                svg{
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+        p{
+            display: flex;
+            align-items: center;
+            font-weight: 350;
+            font-size: 16px;
+            line-height: 100%;
+        }
+        svg{
+            margin-right: 12px;
+        }
+        #accent{
+            color: $main-color;
+            margin-left: 0.3em;
+            margin-right: 0.3em;
+            @include font_type("Noto Serif");
+        }
+        #visitMark{
+            width: 35px;
+            height: 22px;
+        }
+        #text{
+            display: flex;
+            width: fit-content;
+        }
+    }
+
+    //모든 피드를 감싸는 박스
+    #feed{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-grow: 1;
+        height: 100%;
+        margin-top: 12px;
+
+        //피드 1개
+        #infoBox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 240px;
+            height: 100%;
+
+            //피드 사진, 광고
+            #imgBox{
+                display: flex;
+                position: relative;
+                width: 100%;
+                aspect-ratio: 1/1;
+                max-width: 240px;
+                justify-content: flex-end;
+                overflow: hidden;
+                #img{
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $grey01-color;
+                    border-radius: 10px;
+                }
+                img{
+                    z-index: 1;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+                svg{
+                    width: 100%;
+                }
+                #ad{
+                    position: absolute;
+                    width: 100%;
+                    height: auto;
+                    max-width: 37px;
+                    max-height: 25px;
+                    background-color: transparent;
+                    border-radius: 6px;
+                    padding: 10px;
+                    z-index: 2;
+                    
+                }
+                #hoverIconBox{
+                    display: none;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background: rgba($black-color, 0.4);
+                    border-radius: 6px;
+                    color: $white-color;
+                    z-index: 3;
+                    #hoverIcon{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 12px;
+                        margin-bottom: 12px;
+                    }
+                    svg{
+                        margin-right: 12px;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        font-size: 14px;
+                        border-radius: 1px;
+                        #hoverIcon{
+                            margin-top: 4px;
+                            margin-bottom: 4px;
+                        }
+                        svg{
+                            width: 14px;
+                            margin-right: 6px;
+                        }
+                    }
+                }
+            }
+            //피드 지역이름
+            #spotText{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 35px;
+                margin-top: auto;
+                border-radius: 40px;
+                background-color: $light-blue;
+                #spotMark{
+                    margin-right: 6px;
+                    margin-top: 2px;
+                }
+                a{
+                    display: flex;
+                    max-width: 220px;
+                    align-items: center;
+                    margin-bottom: 2px;
+                    height: 100%;
+                    justify-content: space-between;
+                    p{
+                        width: 90%;
+                        @include font_type("Leferi");
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 150%;
+                        overflow: hidden;          
+                        white-space: nowrap;                   
+                        text-overflow: ellipsis;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        //피드 화살표
+        #arrowBox{
+            display: flex;
+            margin-top: auto;
+            margin-bottom: 12px;
+            margin-left: 4px;
+            margin-right: 4px;
+            #nextFeed{
+                display: flex;
+            }
+            #nextFeedSmall{
+                display: none;
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+
+//미디어 쿼리
+@media screen and (max-width: 730px) {
+    #feedBox{
+        #feedText{
+            p{
+                font-size: 14px;
+            }
+            #visitMark{
+                margin-right: 8px;
+                width: 32px;
+                height: 20px;
+            }
+        }
+        #feed{
+            #imgBox{
+                #img{
+                    #ad{
+                        width: 34px;
+                        height: 23px;
+                    }
+                }
+                #spotText{
+                    a{
+                        font-size: 14px;
+                    }
+                    #spotMark{
+                        width: 14px;
+                        height: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 630px) {
+    #feedBox{
+        #feedText{
+            p{
+                font-size: 12px;
+            }
+            #visitMark{
+                margin-right: 6px;
+                width: 30px;
+                height: 18px;
+            }
+        }
+        #feed{
+            #imgBox{
+                #ad{
+                    width: 32px;
+                    height: 20px;
+                }
+                #spotText{
+                    a{
+                        p{
+                            font-size: 12px;
+                        }
+                    }
+                    #spotMark{
+                        width: 12px;
+                        height: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #feedBox{
+        #feedText{
+            p{
+                font-size: 11px;
+            }
+            #visitMark{
+                margin-right: 4px;
+                width: 28px;
+                height: 16px;
+            }
+        }
+        #feed{
+            #imgBox{
+                #ad{
+                    width: 20px;
+                    height: 12px;
+                    padding: 5px;
+                }
+                #spotText{
+                    background-color: transparent;
+                    a{
+                        p{
+                            font-size: 11px;
+                        }
+                    }
+                    #spotMark{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    #feedList{
+        margin: 0;
+    }
+
+    #searchFeedList{
+        margin-top: 80px;
+    }
+    #feedBox{
+        height: fit-content;
+        padding: 0;
+        padding-top: 6px;
+        padding-bottom: 4px;
+        margin: 0;
+        border-radius: 0;
+        #feedText{
+            margin-right: 13px;
+            height: 16px;
+            padding-left: 10px;
+            padding-right: 10px;
+            p{
+                font-size: 10px;
+            }
+            #visitMark{
+                margin-right: 4px;
+                width: 22px;
+                height: 14px;
+            }
+        }
+        #feed{
+            max-height: 140px;
+            margin-top: 3px;
+            position: relative;
+            #infoBox{
+                #imgBox{
+                    max-height: 130px;
+                    #img{
+                        border-radius: 1px;
+                        img{
+                            border-radius: 1px;
+                        }
+                    }
+                    #ad{
+                        width: 22px;
+                        height: 14px;
+                        padding: 4px;
+                    }
+                }
+                #spotText{
+                    height: 15px;
+                    background-color: transparent;
+                    position: relative;
+                    a{
+                        width: 100%;
+                        max-width: 110px;
+                        margin-top: auto;
+                        justify-content: center;
+                        p{
+                            font-size: 11px;
+                            margin-top: 5px;
+                        }
+                    }
+                    #spotMark{
+                        display: none;
+                    }
+                }
+            }
+            #arrowBox{
+                display: flex;
+                margin: 0px;
+                width: 3px;
+                #nextFeed{
+                    display: none;
+                }
+                #nextFeedSmall{
+                    display: flex;
+                    bottom: -2%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 377px) {
+    #feedBox{
+        #feed{
+            #arrowBox{
+                #nextFeedSmall{
+                    bottom: 2%;
+                }
+            }
+        }
+    }
+}
